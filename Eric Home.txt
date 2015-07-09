@@ -1,1 +1,2 @@
-Eric Home testing
+Eric Home
+add some words and delete a word
