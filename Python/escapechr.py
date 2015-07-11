@@ -1,0 +1,6 @@
+print "Romio\tJuia"
+print r"Romio \t Juia"
+print "\a"
+print "\n"
+print "John's book"
+print """John is going to school\n "play" Joe's ...""" 
