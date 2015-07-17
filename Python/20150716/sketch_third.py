@@ -27,6 +27,16 @@ except IOError:
     print("File not found!!")
 
 try:
+    """
+    man_file = open('man_data.txt', 'w')
+    other_file = open('man_data.txt', 'w')
+
+    for each_item in man:
+            print(each_item, file=man_file)
+    for each_item in other:
+            print(each_item, file=other_file)
+    """
+    
     #利用with語法開啟檔案並進行寫入動作
     with open('man_data.txt', 'w') as man_file:
         for each_item in man:
