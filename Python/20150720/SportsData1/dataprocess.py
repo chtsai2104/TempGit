@@ -28,6 +28,7 @@ try:
         sarah = data.strip().split(',')
 
     #呼叫sanitize函數將時間格式化成 min:sec
+    """
     clean_james = []
     clean_julie = []
     clean_mikey = []
@@ -41,15 +42,46 @@ try:
         clean_mikey.append(sanitize(each_time))
     for each_time in sarah:
         clean_sarah.append(sanitize(each_time))
+    """
 
     #可將上述的for loop動作改用列表推導的方式完成
-    #clean_james = [sanitize(each_time) for each_time in james]
+    clean_james = sorted(set([sanitize(each_time) for each_time in james]))
+    clean_julie = sorted(set([sanitize(each_time) for each_time in julie]))
+    clean_mikey = sorted(set([sanitize(each_time) for each_time in mikey]))
+    clean_sarah = sorted(set([sanitize(each_time) for each_time in sarah]))
+    print(clean_james[0:3])
+    print(clean_julie[0:3])
+    print(clean_mikey[0:3])
+    print(clean_sarah[0:3])
 
-    #列印Copied Sorting的結果進行觀察
-    print(sorted(clean_james))
-    print(sorted(clean_julie))
-    print(sorted(clean_mikey))
-    print(sorted(clean_sarah))
+    #去除重複性的資料
+    unique_james = []
+    for each_t in clean_james:
+        if each_t not in unique_james:
+            unique_james.append(each_t)
+
+    print(unique_james[0:3])
+
+    unique_julie = []
+    for each_t in clean_julie:
+        if each_t not in unique_julie:
+            unique_julie.append(each_t)
+
+    print(unique_julie[0:3])
+
+    unique_mikey = []
+    for each_t in clean_mikey:
+        if each_t not in unique_mikey:
+            unique_mikey.append(each_t)
+
+    print(unique_mikey[0:3])
+
+    unique_sarah = []
+    for each_t in clean_sarah:
+        if each_t not in unique_sarah:
+            unique_sarah.append(each_t)
+
+    print(unique_sarah[0:3])
     
 except IOError as err:
     print('IO Error: ' + str(err))
